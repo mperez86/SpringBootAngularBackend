@@ -39,7 +39,7 @@ public class TaskRestController {
         task.setUserId(Long.valueOf(jwtUser.getId()));
         task.setStatus("to-do");
         taskServiceInterface.save(task);
-        return new ResponseEntity<Void>(HttpStatus.CREATED);
+        return new ResponseEntity<>(task, HttpStatus.CREATED);
     }
 
     @PutMapping("/task")
